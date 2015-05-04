@@ -1,0 +1,2 @@
+This is a very basic MEAN Stack app called the contactlist app. The app can be checked live <a href="samarth.azurewebsites.net" target="_blank">here</a>.
+The app stores data on a remote server in a mongodb file. A user can add new contacts and perform all sorts of crud operations on the contacts. Angular makes the two way binding really easy and thus always keeps the view updated with latest data.
