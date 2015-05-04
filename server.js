@@ -1,7 +1,8 @@
 var express = require('express');
 var app 	= express();
 var mongojs = require('mongojs');
-var db		= mongojs('contactlist',['contactlist']);
+var uri = "mongodb://samarth:abc@ds034348.mongolab.com:34348/mydb";
+var db		= mongojs.connect(uri, ["contactlist"]);
 var bodyparser = require('body-parser');
 
 app.use(express.static(__dirname + "/public"));
