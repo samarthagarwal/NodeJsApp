@@ -60,8 +60,8 @@ app.put('/contactlist/:id', function(req,res)
 			res.json(doc);
 		});
 });
-
-var server = app.listen(3000, function () {
+var port = process.env.PORT || 1337;
+var server = app.listen(port, function () {
 
 	var host = server.address().address;
 	var port = server.address().port;
