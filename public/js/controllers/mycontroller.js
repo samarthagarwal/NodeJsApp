@@ -44,7 +44,7 @@ app.controller("mycontroller", function($scope, $http){
 		$http.get('/contactlist/'+id).success(function(response)
 		{	
 			$scope.contact = response[0];
-			console.log(response.name);
+			console.log(response[0].name);
 		});
 	};
 
