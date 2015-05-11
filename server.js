@@ -25,7 +25,7 @@ app.get('/contactlist/:id', function(req,res)
 	var id = req.params.id;
 	console.log('Received a GET request for id %s !',id);
 
-	db.contactlist.find({ _id: mongojs.ObjectId(id) }, function(err,doc)
+	db.contactlist.find({ _id: id}, function(err,doc)
 	{
 		console.log(doc);
 		res.json(doc);
@@ -45,7 +45,7 @@ app.post('/contactlist', function(req, res)
 app.delete('/contactlist/:id', function(req, res){
 	var id = req.params.id;
 	console.log("Received a request to delete contact with _id "+ id);
-	db.contactlist.remove({_id: mongojs.ObjectId(id)}, function(err, doc){
+	db.contactlist.remove({_id: id}, function(err, doc){
 		res.json(doc);
 	});
 });
@@ -55,7 +55,7 @@ app.put('/contactlist/:id', function(req,res)
 	var id = req.params.id;
 	console.log("Received an Update request contact with _id "+ id);
 
-	db.contactlist.findAndModify( {query: {_id: mongojs.ObjectId(id)},
+	db.contactlist.findAndModify( {query: {_id: id},
 		update: {$set: {name: req.body.name, email: req.body.email, number: req.body.number}},
 		new: true}, function(err, doc){
 			res.json(doc);
