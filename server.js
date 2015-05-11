@@ -25,7 +25,7 @@ app.get('/contactlist/:id', function(req,res)
 	var id = req.params.id;
 	console.log('Received a GET request for id %s !',id);
 
-	db.contactlist.find({ _id: id}, function(err,doc)
+	db.contactlist.find({ _id: mongojs.ObjectId(id)}, function(err,doc)
 	{
 		console.log(doc);
 		res.json(doc);
